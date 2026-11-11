@@ -141,6 +141,18 @@ All routes except register, login and health need an `Authorization: Bearer <tok
 | GET | `/api/analytics/trend?months=6` | Income and expenses per month |
 | GET | `/api/analytics/months` | Months that have data |
 
+## Deploying to Vercel
+
+The repo deploys as one Vercel project with two services, defined in [`vercel.json`](vercel.json):
+the Vite frontend, and the FastAPI app as a Python function that receives everything under `/api`.
+
+1. Import the repository in Vercel.
+2. Add a `SECRET_KEY` environment variable with a long random value. The backend refuses to start
+   on Vercel without one.
+3. Optional but recommended: add a `DATABASE_URL` for a Postgres database (for example a free Neon
+   database from the Vercel Marketplace). Without it the app uses a SQLite file in `/tmp`, which
+   Vercel can discard at any time, so accounts and data are temporary.
+
 ## Configuration
 
 Copy `backend/.env.example` to `backend/.env`. Set `SECRET_KEY` to a long random value before
