@@ -1,5 +1,7 @@
 # Finance Tracker
 
+[![CI](https://github.com/keval718/finance-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/keval718/finance-tracker/actions/workflows/ci.yml)
+
 A personal finance app: import a CSV export from your bank, have every transaction
 categorized automatically, and see where the money goes each month against the budgets you set.
 
